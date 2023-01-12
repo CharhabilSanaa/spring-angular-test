@@ -1,0 +1,28 @@
+<h1 class="text-center mt-4 mb-4">Add new Order</h1>
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+      <p><i>You will receive your order on : {{DateReceivedOrder.toLocaleString() | date: 'dd-MM-yyyy'}}</i></p>
+      <br>
+      <form (ngSubmit)="onSubmit()" method="POST">
+        <div>
+          
+          <!--<ng-select [items]="articles"></ng-select>-->
+          <label for="orderItems" class="formbold-form-label">Choose article for order :</label>
+          <input type="text" (keyup)="search()" [(ngModel)]="searchText" id="orderItems"  placeholder="Type the article name here" name="orderItems" class="formbold-form-input"/>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action" *ngFor="let filterItem of filteredItems" (click)="selectItem(filterItem)">{{filterItem.name}}</li>
+          </ul>
+          <span class="badge text-bg-primary chip" *ngFor="let chip of selectedItems" style="font-size:10px;">{{chip.name}}<i class="bi bi-x-circle-fill" (click)="removeItem(chip)"></i></span>
+          <!---->
+   
+          
+        </div>
+          <br>
+          <br>
+          <button class="formbold-cancel" routerLink="orders">Cancel</button>
+          <button class="formbold-btn" type="Submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  

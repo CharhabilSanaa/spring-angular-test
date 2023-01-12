@@ -1,0 +1,18 @@
+
+
+<nav class="nav" *ngIf="router.url != '/' ">
+    <div class="nav-main" >
+        <div class="logo">ECO<span>Market</span></div>
+        <ul class="nav-links">
+            <li class="nav-link"><a routerLink="articles">Home</a></li>
+            <li class="nav-link"><a routerLink="orders">Orders</a></li>
+            
+        </ul>
+    </div>
+       
+    <div class="cta">
+        <button class="btn btn-secondary" routerLink="/">Log Out  <i class="bi bi-box-arrow-in-right"></i></button>
+        <button class="btn btn-primary">About US</button>
+    </div>
+</nav>
+<router-outlet></router-outlet>

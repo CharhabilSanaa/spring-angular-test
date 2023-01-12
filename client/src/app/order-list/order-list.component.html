@@ -1,0 +1,42 @@
+<div class="intro">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.25);">
+        <div class="container">
+          <h1 class="text-center mt-4 mb-4" style="color:white">List of orders</h1>
+          <br>
+          <button type="button" class="btn btn-success" routerLink="add-order"><i class="bi bi-plus"></i> Add new order </button>
+          <br><br>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card bg-dark shadow-2-strong">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-dark table-borderless mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Reference</th>
+                          <th scope="col">Articles</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Details</th>
+                          <th scope="col">Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let order of orders">
+                          <th scope="row">{{order.id}}</th>
+                          <td>{{order.reference}}</td>
+                          <td>{{order.orderItems}}</td>
+                          <td>{{order.createdDate | date: 'dd-MM-yyyy H:mm:s'}}</td>
+                          <td><button type="button" class="btn btn-secondary"><i class="bi bi-eye-fill"></i></button></td>
+                          <td><button type="button" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>

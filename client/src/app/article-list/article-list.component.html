@@ -1,0 +1,33 @@
+<body>
+<div class="app">
+    <div class="container mb-5 mt-5">
+        <h1 class="text-center mt-4 mb-4">The most popular items</h1>
+        
+        
+        <button type="button" class="btn btn-success" routerLink="add-article"><i class="bi bi-plus"></i> Add new article</button>
+
+        <div class="row">
+            <div class="col-md-4" *ngFor="let article of articles">
+                <div class="card mt-3">
+                    <div class="product-1 align-items-center p-2 text-center">
+                        <div class="image-container"> <img [attr.src]="article.image" style="height: 100px; width: 100px" /></div>
+                        <br>
+                        <h5>{{article.name}}</h5>
+                        <div class="mt-3 info"> <span class="text1 d-block">Intense Eau de Parfum</span> <span class="text1">cleansing water. 125 ml </span> </div>
+                        <div class=" cost mt-3 text-dark" > <span>{{article.price}}.MAD</span>
+                            <div class=" star mt-3 align-items-center"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-dark flex-fill me-1" data-mdb-ripple-color="dark">Add to WishList <i class="bi bi-bag-heart-fill"></i></button>
+                        <button type="button" class="btn btn-primary flex-fill ms-1">Buy now <i class="bi bi-cart-fill"></i></button> 
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
